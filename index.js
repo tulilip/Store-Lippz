@@ -424,7 +424,7 @@ let tekssss = `───「  *PAYMENT*  」────
 - *Dana :* ${global.dana}
 - *Gopay :*  ${global.gopay}
 - *Ovo :* ${global.ovo}
-- *Qris :* *SCAN QRIS DIATAS*
+- *Qris :* *SCAN QRISDIATAS +500p*
 
 _Pembayaran ini Telah di kirim oleh Admin_
 _Melalui bot ini🙏_
@@ -449,14 +449,30 @@ break
 case 'payment':
 case 'pembayaran':
 case 'bayar':{
-let tekssss = `───「 *PAYMENT* 」────
+let tekssss = `═══▣ Lippz Store ▣═══
 
-- *Dana :* ${global.dana}
-- *Gopay :*  ${global.gopay}
-- *Ovo :* ${global.ovo}
-- *Qris :* *SCAN QRIS DIATAS*
 
-*Jangan lupa kirim bukti transfer ya*
+『PAYMENT METHOD』
+
+╭─❒ 「• ǫʀɪs •」
+◇   SCAN QRIS +500p
+
+╭─❒ 「• ʙᴀɴᴋ •」
+◇   BRI : 055201027590506
+
+╭─❒ 「• ᴇ-ᴡᴀʟʟᴇᴛ •」
+◇ DANA :  082297337173
+◇ GOPAY : 082297337173
+◇ SPAY :  082297337173
+◇ OVO :   082297337173
+
+> dana ke dana dikenakan biaya +100
+> bank ke dana dikenakan biaya +500
+- a/n KHALIF SURYA DHAHA
+
+
+Lippz Store
+━━━━━━ ◦ ❖ ◦ ━━━━━━
 `
 ramz.sendMessage(from, { image: fs.readFileSync(`./gambar/qris.jpg`),
  caption: tekssss, 
@@ -468,7 +484,7 @@ case 'p': case 'proses':{
 if (!isGroup) return ('Hanya Dapat Digunakan Gi Group')
 if (!isOwner && !isGroupAdmins) return ('Hanya Bisa Digunakan Oleh Admin')
 if (!quotedMsg) return reply('Reply pesanannya!')
-mentions(`「 *TRANSAKSI PROSES* 」\n\n\`\`\`📆 TANGGAL : ${tanggal}\n⌚ JAM     : ${jam}\n✨ STATUS  : Proses bosqu\`\`\`\n\n📝 Catatan : ${quotedMsg.chats}\n\nPesanan @${quotedMsg.sender.split("@")[0]} sebentar bosqu lagi di proses`, [sender])
+mentions(`「 *TRANSAKSI PROSES* 」\n\n\`\`\`📆 TANGGAL : ${tanggal}\n⌚ JAM     : ${jam}\n✨ STATUS  : Proses bosqu\`\`\`\n\n📝 Pesanan : ${quotedMsg.chats}\n\nPesanan @${quotedMsg.sender.split("@")[0]} sebentar bosqu lagi di proses`, [sender])
 }
 break
 case 'd': case 'done':{
@@ -620,10 +636,10 @@ if (!isBotGroupAdmins) return reply(mess.BotAdmin)
 if (!q) return reply(`Kirim perintah #${command} _options_\nOptions : close & open\nContoh : #${command} close`)
 if (args[0] == "close") {
 ramz.groupSettingUpdate(from, 'announcement')
-reply(`Sukses mengizinkan hanya admin yang dapat mengirim pesan ke grup ini`)
+reply(`*STORE OPEN*\n\nTerimakasih atas kerjasamanya sampai jumpa besok`)
 } else if (args[0] == "open") {
 ramz.groupSettingUpdate(from, 'not_announcement')
-reply(`Sukses mengizinkan semua peserta dapat mengirim pesan ke grup ini`)
+reply(`*STORE OPEN*\n\nGass order _Lippz Store_ udah Open`)
 } else {
 reply(`Kirim perintah #${command} _options_\nOptions : close & open\nContoh : #${command} close`)
 }
@@ -702,9 +718,9 @@ case 'list':
       });
     }
   }
-  let tekny = `Hai @${sender.split("@")[0]}\nBerikut list item yang tersedia di group ini!\n\nSilahkan ketik nama produk yang diinginkan!\n\n`;
+  let tekny = `Hai @${sender.split("@")[0]}\nBERIKUT LIST PRODUK YANG ADA DI LIPPZ STORE\n≪ °❈° ≫≪ °❈° ≫≪ °❈° ≫≪ °❈° ≫\n\n_Silahkan Ketik Nama Produk Untuk Melihat List_\n\n`;
   for (let i of arr_rows) {
-    tekny += `Produk : ${i.title}\n\n`;
+    tekny += `✧ ${i.title}\n`;
   }
   var listMsg = {
     text: tekny,
